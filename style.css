@@ -1,0 +1,54 @@
+/* Basic Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* Choose a font */
+    line-height: 1.6;
+    background-color: black;
+    color : white;
+}
+
+/* Header and Footer Styling */
+header,
+footer {
+    background-color: black;
+    /* Header/Footer background color */
+    color: white;
+    /* Header/Footer text color */
+    text-align: center;
+    padding: ___;
+    /* Header/Footer padding */
+}
+
+/* Navigation Styling */
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: ___;
+    /* Navigation bar background color */
+    padding: ___;
+    /* Navigation bar padding */
+}
+
+/* Main Content Layout */
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+aside {
+    width: ___;
+    /* Sidebar width */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
