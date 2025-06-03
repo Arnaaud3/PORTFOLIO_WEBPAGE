@@ -2,32 +2,59 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <title>Arnaud's Personal Portfolio Website</title>
+        <meta name="description" content="Welcome to Arnaud's personal portfolio website. Discover my skills, projects, and contact information as a passionate developer and technology enthusiast.">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title> This is my personnal WebPage !</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
+        <nav id="nav-menu">
+            <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Open navigation menu" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
         <h1> Welcome to my personnal Webpage.</h1>
-        <section>
+        <section id="about">
             <h2>About me</h2>
             <p>Hello! My name is Arnaud and I'm a developer passionate about technology, learning, and building creative projects. I enjoy exploring new programming languages and sharing knowledge with others.</p>
         </section>
         
-        <section>
+        <section id="skills">
             <h2>My Skills</h2>
             <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>C# (.NET)</li>
+                <li class="skill-html">HTML</li>
+                <li class="skill-css">CSS</li>
+                <li class="skill-js">JavaScript</li>
+                <li class="skill-python">Python</li>
+                <li class="skill-cs">C# (.NET)</li>
             </ul>
         </section>
 
-        <section> 
+        <section id="projects"> 
             <h2>My Projects</h2>
-            <article>
+            <div>
+                <label for="category-filter">Filter by category:</label>
+                <select id="category-filter" class="category-filter-button">
+                    <option value="all">All</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="data-science">Data Science</option>
+                </select>
+            </div>
+            <article data-category="web-development">
                 <h3>Personal Portfolio Website</h3>
                 <figure>
                     <img src="images/portfolio_screenshot.png" alt="Screenshot of personal portfolio website" style="max-width:300px;">
@@ -38,46 +65,65 @@
                 </p>
                 <a href="https://github.com/yourusername/portfolio" target="_blank">View on GitHub</a>
             </article>
+            <article data-category="data-science">
+                <h3>Data Analysis Project</h3>
+                <figure>
+                    <img src="images/python_logo.jpeg" alt="Screenshot of data analysis project" style="max-width:300px;">
+                    <figcaption>Screenshot of my data analysis project.</figcaption>
+                </figure>
+                <p>
+                    A data science project using Python to analyze and visualize datasets. This project demonstrates my skills in data wrangling and statistical analysis.
+                </p>
+                <a href="https://github.com/yourusername/data-analysis" target="_blank">View on GitHub</a>
+            </article>
         </section>
         
 
-        <h3> My hobies</h3>
-        <ul>
-            <li>Reading</li>
-            <li>Hicking</li>
-            <li>Photography</li>
-        </ul>
+        <section id="hobbies">
+            <h2> My hobies</h2>
+            <ul>
+                <li>Reading</li>
+                <li>Hicking</li>
+                <li>Photography</li>
+            </ul>
+        </section>
 
-        <h3> My Goals </h3>
-        <ol>
-            <li> Learn Web development</li>
-            <li> Build a web portfolio as a project</li>
-            <li> Contribute to open source project</li>
-        </ol>
+        <section id="goals">
+            <h2> My Goals </h2>
+            <ol>
+                <li> Learn Web development</li>
+                <li> Build a web portfolio as a project</li>
+                <li> Contribute to open source project</li>
+            </ol>
+        </section>
+        
 
-        <h3>Feedback form</h3>
-        <form action="submit.html" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+        <section id="feedback">
+            <h2>Feedback form</h2>
+            <form action="submit.html" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
 
-            <label>Rate this website:</label><br>
-            <input type="radio" id="excellent" name="rating" value="excellent">
-            <label for="excellent">Excellent</label><br>
+                <label>Rate this website:</label><br>
+                <input type="radio" id="excellent" name="rating" value="excellent">
+                <label for="excellent">Excellent</label><br>
 
-            <input type="radio" id="good" name="rating" value="good">
-            <label for="good">Good</label><br>
+                <input type="radio" id="good" name="rating" value="good">
+                <label for="good">Good</label><br>
 
-            <input type="radio" id="average" name="rating" value="average">
-            <label for="average">Average</label><br>
+                <input type="radio" id="average" name="rating" value="average">
+                <label for="average">Average</label><br>
 
-            <input type="submit" value="Submit">
+                <input type="submit" value="Submit">
 
-        </form>
+            </form>
+        </section>
+        
 
-        <section>
+        <section id="contact">
             <h2>Contact</h2>
             <form action="contact_submit.html" method="post">
                 <label for="contact-name">Name:</label>
@@ -101,5 +147,6 @@
             Contact: <a href="mailto:example@outlook.fr">example@outlook.fr</a>
             </p>
         </footer>
+    <script src="script.js"></script>
     </body>
 </html>
